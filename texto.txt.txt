@@ -1,5 +1,4 @@
-Quiero que los elementos li del navbar esten un poco más a la izquierda, y que la fuente de la pagina sea Roboto
-
+Añade al carrusel 3 imagenes, y que se vayan cambiando de apoco acorde a los dots
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -7,20 +6,25 @@ Quiero que los elementos li del navbar esten un poco más a la izquierda, y que 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brigada Los Angeles</title>
+    
+    <!-- Cargar la fuente Roboto desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
 </head>
 <body>
     <style>
         body {
-            font-family: Roboto, sans-serif;
+            font-family: 'Roboto', sans-serif;
             color: white;
-            background-color: #9a1a1a;
+            background-color: #db2222;
         }
 
         /* Estilos del header y navbar */
         header {
             background-color: #D32F2F;
             padding: 10px 20px;
+            border-bottom: 10px solid #f04343; /* Línea decorativa debajo del navbar */
         }
 
         .navbar {
@@ -31,7 +35,7 @@ Quiero que los elementos li del navbar esten un poco más a la izquierda, y que 
 
         .navbar h1 {
             font-size: 1.5em;
-            padding: 10px;
+            padding: 5px;
             margin: 10px;
         }
 
@@ -39,6 +43,7 @@ Quiero que los elementos li del navbar esten un poco más a la izquierda, y que 
             list-style: none;
             display: flex;
             gap: 20px;
+            margin-right: 20px; /* Añade un margen derecho para el navbar */
         }
 
         .navbar nav ul li a {
@@ -47,6 +52,12 @@ Quiero que los elementos li del navbar esten un poco más a la izquierda, y que 
             font-size: 1em;
             font-weight: bold;
             padding: 20px;
+            margin: 10px;
+        }
+
+        /* Ajustar la posición de los elementos li */
+        .navbar nav ul li {
+            margin-left: -10px; /* Ajuste para mover elementos hacia la izquierda */
         }
 
         /* Estilos de la sección Hero */
@@ -127,6 +138,7 @@ Quiero que los elementos li del navbar esten un poco más a la izquierda, y que 
             }
         }
     </style>
+
     <header>
         <div class="navbar">
             <h1>BRIGADA LOS ANGELES</h1>
@@ -145,12 +157,12 @@ Quiero que los elementos li del navbar esten un poco más a la izquierda, y que 
             <h2>¿Quiénes somos?</h2>
             <p>It has 3 hot temperature control buttons and a cold button is available. With the best material so it's comfortable to use and doesn't feel hot when you hold it.</p>
         </div>
-        <div class="carousel-controls">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
     </section>
+    <div class="carousel-controls">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
 
 </body>
 </html>
