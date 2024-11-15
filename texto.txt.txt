@@ -1,0 +1,156 @@
+Quiero que los elementos li del navbar esten un poco más a la izquierda, y que la fuente de la pagina sea Roboto
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brigada Los Angeles</title>
+    <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+</head>
+<body>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            color: white;
+            background-color: #9a1a1a;
+        }
+
+        /* Estilos del header y navbar */
+        header {
+            background-color: #D32F2F;
+            padding: 10px 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            font-size: 1.5em;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        /* Estilos de la sección Hero */
+        .hero {
+            position: relative;
+            background-image: url("{% static 'images/fondo.png' %}"); /* Coloca la imagen de fondo aquí */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        /* Controles del carrusel */
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .dot:hover {
+            opacity: 1;
+        }
+
+        /* Estilos responsive */
+        @media (max-width: 768px) {
+            .navbar nav ul {
+                flex-direction: column;
+            }
+
+            .hero-content h2 {
+                font-size: 1.5em;
+            }
+
+            .hero-content p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+    <header>
+        <div class="navbar">
+            <h1>BRIGADA LOS ANGELES</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Reportar</a></li>
+                    <li><a href="#">Contactar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>¿Quiénes somos?</h2>
+            <p>It has 3 hot temperature control buttons and a cold button is available. With the best material so it's comfortable to use and doesn't feel hot when you hold it.</p>
+        </div>
+        <div class="carousel-controls">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+</body>
+</html>

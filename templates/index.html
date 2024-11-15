@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brigada Los Angeles</title>
+    
+    <!-- Cargar la fuente Roboto desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+</head>
+<body class="container">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            background-color: #db2222;
+        }
+
+        /* Estilos del header y navbar */
+        header {
+            background-color: #D32F2F;
+            padding: 10px 20px;
+            border-bottom: 10px solid #f04343; /* Línea decorativa debajo del navbar */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            font-size: 1.5em;
+            padding: 5px;
+            margin: 10px;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin-right: 20px; /* Añade un margen derecho para el navbar */
+        }
+
+        .navbar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            padding: 20px;
+            margin: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el efecto hover */
+        }
+
+        /* Hover effect for navbar items */
+        .navbar nav ul li a:hover {
+            background-color: #b71c1c; /* Fondo más oscuro al hacer hover */
+            color: #ffdddd; /* Cambia el color de texto al hacer hover */
+            text-decoration: underline; /* Añade un subrayado al hacer hover */
+            border-radius: 5px; /* Borde redondeado para el efecto de fondo */
+        }
+
+        /* Ajustar la posición de los elementos li */
+        .navbar nav ul li {
+            margin-left: -10px; /* Ajuste para mover elementos hacia la izquierda */
+        }
+
+        /* Estilos de la sección Hero */
+        .hero {
+            position: relative;
+            background-image: url("{% static 'images/fondo.png' %}"); /* Coloca la imagen de fondo aquí */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 25px;
+            line-height: 1.5;
+        }
+        
+        /* Estilos responsive */
+        @media (max-width: 768px) {
+            .navbar nav ul {
+                flex-direction: column;
+            }
+
+            .hero-content h2 {
+                font-size: 1.5em;
+            }
+
+            .hero-content p {
+                font-size: 0.9em;
+            }
+        }
+        .container {
+        width: 100%;
+        height: 100%;
+        --s: 200px; /* control the size */
+        --c1: #ba1b1b;
+        --c2: #f04343;
+        --c3: #D32F2F;
+
+        background: repeating-conic-gradient(
+                from 30deg,
+                #0000 0 120deg,
+                var(--c3) 0 180deg
+            )
+            calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+            repeating-conic-gradient(
+            from 30deg,
+            var(--c1) 0 60deg,
+            var(--c2) 0 120deg,
+            var(--c3) 0 180deg
+            );
+        background-size: var(--s) calc(var(--s) * 0.577);
+        }
+
+    </style>
+
+    <header>
+        <div class="navbar">
+            <h1>BRIGADA LOS ANGELES</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Reportar</a></li>
+                    <li><a href="#">Contactar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>¿Quiénes somos?</h2>
+            <p>It has 3 hot temperature control buttons and a cold button is available. With the best material so it's comfortable to use and doesn't feel hot when you hold it.</p>
+        </div>
+    </section>
+</body>
+</html>
